@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda</title>
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Audio de Fondo -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="musica/cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Botón Flotante para la Música -->
+    <button id="music-btn" class="music-toggle-btn" aria-label="Música">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- PANTALLA INICIAL DE APERTURA CON ESTILO ARCO / PALACIO -->
+        <div id="welcome-screen" class="welcome-screen">
+            <div class="welcome-overlay"></div>
+    
+            <div class="welcome-card-palace">
+                <!-- Texto superior cursivo -->
+                <h2 class="welcome-script-title">Nos Casamos</h2>
+        
+                <!-- Fecha estilizada -->
+                <div class="welcome-date-line">
+                    <span>DIC</span>
+                    <span class="divider">|</span>
+                    <span>12</span>
+                    <span class="divider">|</span>
+                    <span>2026</span>
+                </div>
+
+        <!-- Botón de apertura e instrucción -->
+                <div class="welcome-action">
+                    <button id="open-invitation-btn" class="open-arch-btn pulse">
+                        TOCÁ PARA ABRIR
+                    </button>
+                    <div class="dots-indicator">• • •</div>
+                </div>
+            </div>
+        </div>
+
+    <!-- CONTENIDO PRINCIPAL DE LA INVITACIÓN -->
+    <main id="main-content" class="main-content hidden">
+        <!-- CABECERA PRINCIPAL / PORTADA -->
+        <header class="hero-header">
+            <div class="hero-overlay"></div>
+            <div class="hero-container">
+                <span class="hero-subtitle">¡NOS CASAMOS!</span>
+                <h1 class="hero-names">Wilber</h1>
+                <span class="hero-ampersand">&</span>
+                <h1 class="hero-names">Laura</h1>
+        
+                <div class="hero-date">
+                    <span>SEP</span>
+                    <span class="dot">|</span>
+                    <span>12</span>
+                    <class="dot">|</span>
+                    <span>2026</span>
+                    </div>
+
+                <div class="scroll-indicator">
+                    <span class="scroll-text">DESLIZA</span>
+                    <i class="fas fa-chevron-down animated-arrow"></i>
+                </div>
+            </div>
+        </header>
+        <!-- I. NUESTRA HISTORIA / FRASAL -->
+        <section class="section">
+            <div class="container relative-container">
+                <div class="section-header">
+                    <span class="roman-numeral">I</span>
+                    <div class="header-titles">
+                        <span class="section-subtitle">LA INVITACIÓN</span>
+                        <h2 class="section-title">El amor es la razon y la boda la celebracion</h2>
+                    </div>
+                </div>
+
+                <!-- Ilustración floral flotante lateral -->
+                <img src="img/f17.svg" alt="Flores Rosadas" class="floral-right">
+
+                <div class="quote-wrapper">
+                    <p class="quote-text">
+                        Mejores son dos que uno, por que si cayeren el uno levantare a su compañera....<br>
+                        y cordon de 3 dobleces no se rompe pronto.        Ecl. 4:9-12
+                    </p>
+                </div>
+
+                <!-- Separador de Hojas -->  
+                <div class="leaf-divider">
+                    <div class="line"></div>
+                    <img src="img/f18.svg" alt="Rama de Hojas" class="leaf-icon">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- II. NUESTROS PADRES Y CONSEJEROS -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="roman-numeral">II</span>
+                    <div class="header-titles">
+                        <span class="section-subtitle">CON BENDICIÓN</span>
+                        <h2 class="section-title">nuestros padres</h2>
+                    </div>
+                </div>
+
+                <div class="blessing-container">
+                    <p class="blessing-title">Con la bendición de Dios y nuestros padres</p>
+            
+                    <!-- Columnas de Padres (Novia y Novio) -->
+                    <div class="parents-grid">
+                        <div class="parents-column">
+                            <p class="parent-name">Gregorio Jachacollo M.</p>
+                            <p class="parent-name">Atamalia Ticona A.</p>
+                        </div>
+                        <div class="parents-column">
+                            <p class="parent-name">Moises Yucra Ch.</p>
+                            <p class="parent-name">Hilaria Llanos de Y.</p>
+                        </div>
+                    </div>
+
+            <!-- Consejeros -->
+                    <div class="advisors-block">
+                        <p class="advisors-title">Nuestros Consejeros</p>
+                        <p class="advisor-name">Demetrio Ticona</p>
+                        <p class="advisor-name">Lucia Chiri</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- III. CUENTA REGRESIVA -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="roman-numeral">III</span>
+                    <div class="header-titles">
+                        <span class="section-subtitle">LA CUENTA ATRAS</span>
+                        <h2 class="section-title">Tenemos el honor de invitarlos a compartir este momento especial con nosotros.</h2>
+                        <h2 class="section-title">Falta poco</h2>
+                    </div>
+                </div>
+                <div id="timer" class="timer-grid">
+                    <div class="timer-box"><span id="days">00</span><label>Días</label></div>
+                    <div class="timer-box"><span id="hours">00</span><label>Hs</label></div>
+                    <div class="timer-box"><span id="minutes">00</span><label>Min</label></div>
+                    <div class="timer-box"><span id="seconds">00</span><label>Seg</label></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="section-header">
+                    <div class="header-titles">
+                        <h2 class="section-title">reserva el día</h2>
+                    </div>
+                </div>
+
+                <div class="calendar-card">
+                    <h3>Septiembre 2026</h3>
+                    <div class="calendar-grid">
+                        <span>Do</span><span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span>
+                        <span></span><span></span><span></span>1<span>2</span><span>3</span><span>4</span><span>5</span>
+                        <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span class="event-day">12</span>
+                        <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+                        <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+                        <span>27</span><span>28</span><span>29</span><span>30</span><span></span>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+
+
+        <!-- IV. ITINERARIO -->
+        <!-- IV. PROGRAMA / ITINERARIO -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="roman-numeral">IV</span>
+                    <div class="header-titles">
+                        <span class="section-subtitle">PROGRAMA</span>
+                        <h2 class="section-title">el itinerario</h2>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <!-- Iglesia -->
+                    <div class="timeline-item">
+                        <i class="fas fa-ring"></i>
+                        <h3>11:00 HRS</h3>
+                        <p class="timeline-place">Iglesia "Villa Isrrael"</p>
+                        <p class="timeline-detail">Taxi Trufi 135, 111 zona sud</p>
+                        <a href="https://maps.app.goo.gl/gTpx1JyYB7i9Zkjm9?g_st=aw" target="_blank" class="btn btn-outline btn-timeline">
+                            <i class="fas fa-map-marker-alt"></i> Ver Ubicación Iglesia
+                        </a>
+                    </div>
+
+            <!-- Recepción -->
+                    <div class="timeline-item">
+                        <i class="fas fa-glass-cheers"></i>
+                        <h3>19:00 HRS</h3>
+                        <p class="timeline-title">Recepción & Brindis</p>
+                        <p class="timeline-place">Salón de eventos "Stana"</p>
+                        <p class="timeline-detail">Taxi Trufi 111 Villa Granada</p>
+                        <a href="https://maps.app.goo.gl/vSe77jiyMPLRrThm7?g_st=aw" target="_blank" class="btn btn-outline btn-timeline">
+                            <i class="fas fa-map-marker-alt"></i> Ver Ubicación Recepción
+                        </a>
+                    </div>
+            <!-- Cena -->
+                    <div class="timeline-item">
+                        <i class="fas fa-utensils"></i>
+                        <h3>20:30 HRS</h3>
+                        <p class="timeline-title">Cena de Honor</p>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- V. CÓDIGO DE VESTIMENTA -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="roman-numeral">V</span>
+                    <div class="header-titles">
+                        <span class="section-subtitle">DRESS CODE</span>
+                        <h2 class="section-title">código de vestimenta</h2>
+                    </div>
+                </div>
+
+                <img src="img/Codigo de bestimenta.jpeg">
+                <h3 class="dress-title">FORMAL / ELEGANTE</h3>
+                <p class="dress-desc">Agradecemos reservar los tonos blancos y beige para la novia.</p>
+            </div>
+        </section>
+
+        <!-- VI. COMUNICADO -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="roman-numeral">VI</span>
+                    <div class="header-titles">
+                        <span class="section-subtitle">MUESTRA DE AFECTO</span>
+                        <h2 class="section-title">Comunicado</h2>
+                    </div>
+                </div>
+
+                <p class="gift-text">Sera un honor contar con su precensia en nuestra boda mientras los mas pequeños descansan dulcemente en casa</p>
+            </div>
+        </section>
+
+        <!-- VII. CONFIRMACIÓN (RSVP) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="roman-numeral">VII</span>
+                    <div class="header-titles">
+                        <span class="section-subtitle">CONFIRMACIÓN</span>
+                        <h2 class="section-title">asistencia</h2>
+                    </div>
+                </div>
+
+                <form id="rsvp-form" class="rsvp-form">
+                    <input type="text" placeholder="Nombre Completo" required>
+                    <select required>
+                        <option value="" disabled selected>¿Asistirás?</option>
+                        <option value="si">Sí, asistiré</option>
+                        <option value="no">No podré asistir</option>
+                    </select>
+                    <input type="number" placeholder="Número de Acompañantes" min="0" max="10">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Confirmar por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+        <!-- VIII. ÁLBUM DIGITAL -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="roman-numeral">VIII</span>
+                    <div class="header-titles">
+                        <span class="section-subtitle">FOTOS</span>
+                        <h2 class="section-title">álbum digital</h2>
+                    </div>
+                </div>
+
+                <p>¡Ayúdanos a capturar cada instante! Escanea el código para subir tus fotos del evento.</p>
+                <div class="qr-container">
+                    <img src="img/demo-qr-album.png" alt="Código QR Álbum Digital" class="qr-code">
+                </div>
+            </div>
+        </section>
+        <!-- Pie de página -->
+        <footer>
+            <img src="img/f17.svg" alt="Flores" class="welcome-floral">
+            <p class="footer-names">Wilber & Laura</p>
+            <small>Con la bendicion de Dios esperamos compartir este dia contigo. ¡Gracias por ser parte de nuestra historia!</small>
+        </footer>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

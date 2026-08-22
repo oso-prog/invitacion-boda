@@ -29,7 +29,7 @@ body {
 }
 
 /* ==========================================
-   PANTALLA DE APERTURA (WELCOME SCREEN)
+   1. PANTALLA DE APERTURA (WELCOME SCREEN)
    ========================================== */
 .welcome-screen {
     position: fixed;
@@ -37,62 +37,167 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--bg-light);
+    background-color: #e2d7c5;
+    background-image: url('../img/welcome_arch_bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
     padding: 20px;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-.welcome-screen.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.welcome-card {
-    background: var(--bg-white);
-    padding: 50px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+.welcome-card-palace {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px; 
     max-width: 420px;
     width: 100%;
-    border: 1px solid #e8e2d5;
 }
 
-.welcome-floral {
-    width: 70px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.welcome-subtitle {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    color: var(--primary-color);
-    display: block;
-}
-
-.welcome-names {
+.welcome-script-title {
     font-family: var(--font-script);
-    font-size: 3.5rem;
-    color: var(--text-dark);
+    font-size: clamp(2.8rem, 6vw, 3.8rem);
+    color: #4a3e3d;
     font-weight: 400;
-    margin: 10px 0;
+    margin-bottom: 5px;
 }
 
-.welcome-date {
+.welcome-date-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     font-family: var(--font-heading);
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    color: var(--text-muted);
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    letter-spacing: 3px;
+    color: #5c4e4b;
     margin-bottom: 30px;
+}
+
+.welcome-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* BOTÓN DE APERTURA DESTACADO */
+.open-arch-btn {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1.5px solid #bda069;
+    color: #4a3e3d;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 28px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(189, 160, 105, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.open-arch-btn i {
+    color: #bda069;
+    font-size: 0.95rem;
+}
+
+.open-arch-btn:hover {
+    background: #bda069;
+    color: #ffffff;
+    border-color: #bda069;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(189, 160, 105, 0.4);
+}
+
+.open-arch-btn:hover i {
+    color: #ffffff;
+}
+
+.open-arch-btn.pulse {
+    animation: btnPulse 2s infinite;
+}
+
+@keyframes btnPulse {
+    0% { box-shadow: 0 0 0 0 rgba(189, 160, 105, 0.5); }
+    70% { box-shadow: 0 0 0 12px rgba(189, 160, 105, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(189, 160, 105, 0); }
+}
+
+.dots-indicator {
+    color: #bda069;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
 }
 
 .main-content.hidden {
     display: none;
+}
+
+/* ==========================================
+   2. CABECERA PRINCIPAL (HERO HEADER)
+   ========================================== */
+.hero-header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e2d7c5;
+    background-image: url('../img/header_arch.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding: 80px 20px 40px 20px;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+    margin-top: -30px; 
+}
+
+.hero-names {
+    font-family: var(--font-script);
+    font-size: clamp(3rem, 7vw, 4.2rem);
+    color: #3b322c;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.hero-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: var(--font-heading);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    letter-spacing: 3px;
+    color: var(--text-dark);
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 /* ==========================================
@@ -127,7 +232,7 @@ body {
 }
 
 /* ==========================================
-   ENCABEZADOS FIEL A LA PLANTILLA (ROMANO + TITULOS)
+   ENCABEZADOS (TITULOS Y SECCIONES)
    ========================================== */
 .section {
     padding: 60px 20px;
@@ -175,13 +280,20 @@ body {
     font-weight: 400;
 }
 
+/* CORREGIDO PARA MOSTRAR MAYÚSCULA INICIAL */
 .section-title {
     font-family: var(--font-script);
     font-size: 2.7rem;
     color: var(--text-dark);
     font-weight: 400;
     margin-top: -5px;
-    text-transform: lowercase;
+    text-transform: none; /* Permite mayúsculas y minúsculas normales */
+}
+
+/* Agranda la primera letra para darle toque caligráfico */
+.section-title::first-letter {
+    font-size: 1.3em;
+    font-weight: 600;
 }
 
 /* ==========================================
@@ -305,10 +417,37 @@ body {
     margin-top: 15px;
 }
 
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 25px;
+}
+
 .timeline-item i {
     font-size: 1.6rem;
     color: var(--primary-color);
     margin-bottom: 5px;
+}
+
+.timeline-place {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.timeline-detail {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.btn-timeline {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 /* ==========================================
@@ -391,7 +530,7 @@ body {
 }
 
 /* ==========================================
-   FORMULARIO Y OTROS COMPONENTES
+   FORMULARIO Y COMPONENTES
    ========================================== */
 .rsvp-form {
     display: flex;
@@ -446,18 +585,8 @@ body {
     border-radius: 8px;
 }
 
-footer {
-    padding: 60px 20px;
-    background-color: #efe8dc;
-}
-
-.footer-names {
-    font-family: var(--font-script);
-    font-size: 2.8rem;
-    color: var(--text-dark);
-}
 /* ==========================================
-   ESTILOS DEDICATORIA PADRES Y CONSEJEROS
+   DEDICATORIA PADRES Y CONSEJEROS
    ========================================== */
 .blessing-container {
     text-align: center;
@@ -518,112 +647,8 @@ footer {
     color: var(--text-dark);
     font-weight: 400;
 }
-.timeline-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 25px;
-}
 
-.timeline-place {
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.timeline-detail {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.btn-timeline {
-    margin-top: 10px;
-    font-size: 0.75rem;
-    padding: 8px 18px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-/* ==========================================
-   CABECERA PRINCIPAL (HERO HEADER)
-   ========================================== */
-.hero-header {
-    position: relative;
-    width: 100%;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../img/header_arch.jpg'); /* Imagen de columnas/arco */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 40px 20px;
-    margin-bottom: 20px;
-}
-
-/* Capa tenue para suavizar el fondo y resaltar el texto */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(253, 251, 247, 0.45);
-    z-index: 1;
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-subtitle {
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    letter-spacing: 5px;
-    color: var(--text-dark);
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-.hero-names {
-    font-family: var(--font-script);
-    font-size: 4.2rem;
-    color: #3b322c;
-    line-height: 1.1;
-    font-weight: 400;
-}
-
-.hero-ampersand {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin: 5px 0;
-}
-
-.hero-date {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    letter-spacing: 3px;
-    color: var(--text-dark);
-    margin-top: 25px;
-    margin-bottom: 40px;
-}
-
-.hero-date .dot {
-    color: var(--primary-color);
-    font-size: 0.9rem;
-}
-
-/* Indicador "DESLIZA" con flecha animada */
+/* INDICADOR DESLIZA */
 .scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -650,108 +675,72 @@ footer {
     40% { transform: translateY(6px); }
     60% { transform: translateY(3px); }
 }
+
 /* ==========================================
-   PANTALLA DE APERTURA (ESTILO ARCO / PALACIO)
+   ANIMACIÓN DE BANDADA DE PÁJAROS
    ========================================== */
-.welcome-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../img/welcome_arch_bg.jpg'); /* Imagen del arco/damasco */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
-    padding: 20px;
-}
-
-.welcome-screen.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Capa de luz central para resaltar el texto dentro del arco */
-.welcome-overlay {
+.birds-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.45) 0%, rgba(253, 251, 247, 0.1) 70%);
+    overflow: hidden;
     pointer-events: none;
-}
-
-/* Contenedor central alineado en el centro del arco */
-.welcome-card-palace {
-    position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: -40px; /* Ajuste sutil para centrar respecto a la cúpula del arco */
 }
 
-.welcome-script-title {
+.bird {
+    position: absolute;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" fill="%234a3e3d"><path d="M0,15 Q12,0 25,15 Q38,0 50,15 Q38,10 25,20 Q12,10 0,15 Z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    animation: flock-fly 16s linear infinite;
+}
+
+.bird--1 { width: 18px; height: 11px; top: 18%; animation-delay: 0s; }
+.bird--2 { width: 15px; height: 9px; top: 19.5%; margin-left: -18px; animation-delay: 0.15s; }
+.bird--3 { width: 16px; height: 10px; top: 21%; margin-left: -32px; animation-delay: 0.3s; }
+.bird--4 { width: 14px; height: 8px; top: 17%; margin-left: -25px; animation-delay: 0.25s; }
+.bird--5 { width: 13px; height: 8px; top: 22.5%; margin-left: -48px; animation-delay: 0.45s; }
+.bird--6 { width: 11px; height: 7px; top: 20%; margin-left: -40px; animation-delay: 0.4s; }
+.bird--7 { width: 10px; height: 6px; top: 23.5%; margin-left: -60px; animation-delay: 0.55s; }
+
+@keyframes flock-fly {
+    0% { left: -20%; transform: translateY(0) scaleY(1); }
+    25% { transform: translateY(-8px) scaleY(0.6); }
+    50% { transform: translateY(-15px) scaleY(1); }
+    75% { transform: translateY(-5px) scaleY(0.6); }
+    100% { left: 120%; transform: translateY(5px) scaleY(1); }
+}
+
+/* ==========================================
+   ADAPTACIÓN RESPONSIVA PARA LAPTOPS / PC
+   ========================================== */
+@media (min-width: 768px) {
+    .welcome-screen,
+    .hero-header {
+        background-size: contain; 
+        background-position: center;
+    }
+
+    .welcome-card-palace {
+        margin-top: 80px;
+    }
+
+    .hero-container {
+        margin-top: -10px;
+    }
+}
+
+footer {
+    padding: 60px 20px;
+    background-color: #efe8dc;
+}
+
+.footer-names {
     font-family: var(--font-script);
-    font-size: 3.8rem;
-    color: #4a3e3d;
-    font-weight: 400;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.welcome-date-line {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    letter-spacing: 3px;
-    color: #5c4e4b;
-    margin-bottom: 35px;
-}
-
-.welcome-date-line .divider {
-    color: #bda069;
-    font-size: 0.9rem;
-}
-
-/* Botón transparente integrado perfectamente al diseño */
-.welcome-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.open-arch-btn {
-    background: transparent;
-    border: none;
-    color: #78685c;
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.open-arch-btn:hover {
-    color: #bda069;
-    transform: scale(1.05);
-}
-
-.dots-indicator {
-    color: #bda069;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
+    font-size: 2.8rem;
+    color: var(--text-dark);
 }
